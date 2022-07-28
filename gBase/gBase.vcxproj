@@ -115,7 +115,7 @@
       <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
 
 echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFileName) | findstr dll | sort</Command>
+dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -144,7 +144,7 @@ dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFil
       <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
 
 echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFileName) | findstr dll | sort</Command>
+dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -177,7 +177,7 @@ dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFil
       <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
 
 echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFileName) | findstr dll | sort</Command>
+dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -210,7 +210,7 @@ dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFil
       <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
 
 echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents C:\Users\박종빈\Desktop\gBase\build\x86\Debug\$(TargetFileName) | findstr dll | sort</Command>
+dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
