@@ -112,10 +112,7 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
-
-echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp;\ echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -141,10 +138,7 @@ dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(Tar
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
-
-echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp;\ echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -174,10 +168,7 @@ dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(Tar
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
-
-echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp;\ echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -207,10 +198,7 @@ dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(Tar
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration))
-
-echo "$(TargetFileName)" 필요 DLL
-dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp;\ echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
