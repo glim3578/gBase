@@ -7,3 +7,4 @@
     ```git clone https://github.com/glim3578/gBase.git```
 
 2. 라이브러리 zip 다운 및 솔루션 최상단 압축해제
+3. 프로젝트 속성 - 링커 - 입력 : 사용할 라이브러리 추가
