@@ -113,7 +113,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp; echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(TargetPath)" ^| findstr "dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")
+
+for /F "tokens=5 delims= " %%a in ('dir $(OutputPath) ^| findstr ".dll"') do for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(OutputPath)%%a" ^| findstr ".dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -140,7 +142,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp; echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(TargetPath)" ^| findstr "dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")
+
+for /F "tokens=5 delims= " %%a in ('dir $(OutputPath) ^| findstr ".dll"') do for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(OutputPath)%%a" ^| findstr ".dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -171,7 +175,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp; echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(TargetPath)" ^| findstr "dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")
+
+for /F "tokens=5 delims= " %%a in ('dir $(OutputPath) ^| findstr ".dll"') do for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(OutputPath)%%a" ^| findstr ".dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -202,7 +208,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>if exist $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\ (xcopy /y /d $(SolutionDir)$(PlatformTarget)\$(Configuration)\lib\*.dll $(SolutionDir)build\$(PlatformTarget)\$(Configuration)) &amp;&amp; echo "$(TargetFileName)" 필요 DLL &amp;&amp; dumpbin /dependents $(SolutionDir)build\$(PlatformTarget)\$(Configuration)\$(TargetFileName) | findstr dll | sort</Command>
+      <Command>for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(TargetPath)" ^| findstr "dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")
+
+for /F "tokens=5 delims= " %%a in ('dir $(OutputPath) ^| findstr ".dll"') do for /F "tokens=1 delims= " %%x in ('dumpbin /dependents "$(OutputPath)%%a" ^| findstr ".dll"') do if exist "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" (xcopy /Y /C "$(gLib)\$(PlatformTarget)\$(Configuration)\bin\%%x" "$(OutputPath)")</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
